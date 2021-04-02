@@ -11,6 +11,8 @@
 
 h1 {
   text-align: center;
+  font-family: sans-serif;
+  font-weight: lighter;
 }
 
 form {
@@ -20,7 +22,7 @@ form {
 
 .submit-button {
   align-self: flex-end;
-  border: 1px solid black;
+  border: 2px solid black;
   background-color: white;
   margin-top: 0.5rem;
 }
@@ -29,6 +31,7 @@ form {
   width: 99%;
   height: 5rem;
   border: 2px solid black;
+  resize: none;
 }
 
 .drop-down {
@@ -44,10 +47,16 @@ form {
 }
 
 .add-button {
-  padding: 6px 50px;
+  padding: 10px 60px;
   align-self: center;
-  background-color: rgb(149, 188, 242);
+  background-color: white;
   border: 3px solid black;
+  font-size: 12px;
+}
+
+.add-button:hover {
+  background-color: rgb(149, 188, 242);
+  cursor: pointer;
 }
 
 .add-entry-button {
@@ -62,4 +71,9 @@ form {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.hidden {
+  display: none;
+}
 }
