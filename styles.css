@@ -42,3 +42,24 @@ form {
   margin-left: auto;
   margin-right: auto;
 }
+
+.add-button {
+  padding: 6px 50px;
+  align-self: center;
+  background-color: rgb(149, 188, 242);
+  border: 3px solid black;
+}
+
+.add-entry-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.76);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
