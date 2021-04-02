@@ -17,3 +17,17 @@ function submitHandler(event) {
 }
 
 $submitButton.addEventListener('submit', submitHandler);
+
+var $allDays = document.querySelector('.all-days');
+
+var $eachDay = document.querySelectorAll('.days');
+
+function daysHandler(event) {
+  for (var i = 0; i < $eachDay.length; i++) {
+    if (event.target.getAttribute('id') === $eachDay[i].getAttribute('id')) {
+      console.log('working');
+    }
+  }
+}
+
+$allDays.addEventListener('click', daysHandler);

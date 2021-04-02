@@ -81,14 +81,14 @@ form {
 .days {
   background-color: white;
   padding: 25px 10px;
-  flex-basis: calc(100% / 7);
-  margin: 0 35px;
+  flex-basis: calc(100% / 10);
   border: 3px solid black;
 }
 
 .all-days {
   display: flex;
   width: 100%;
+  justify-content: space-evenly;
 }
 
 .days:hover {
@@ -104,6 +104,7 @@ table {
   border: 3px solid black;
   width: 80%;
   align-self: center;
+  border-collapse: collapse;
 }
 
 .table {
@@ -117,4 +118,15 @@ tr:nth-child(odd) {
 
 #table-header {
   background-color: rgb(184, 181, 181);
+}
+
+th,
+td {
+  border-right: 3px solid black;
+  border-left: 3px solid black;
+}
+
+th {
+  text-align: left;
+  font-size: 14px;
 }
