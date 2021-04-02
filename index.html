@@ -20,7 +20,7 @@
         <button class="days" id="saturday">Saturday</button>
       </div>
       <div class="add-entry-button">
-      <button class="add-button">Add Entry</button>
+        <button class="add-button">Add Entry</button>
       </div>
       <div class="modal-container hidden">
         <h1>Add Entry</h1>
@@ -60,24 +60,30 @@
       </div>
       <h2>Scheduled Events for Monday</h2>
       <div class="table">
-      <table>
-        <thead>
-          <tr id="table-header">
-            <th>Time</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>10:00</td>
-            <td>Feed the cats</td>
-          </tr>
-          <tr>
-            <td>1:00</td>
-            <td>eat lunch</td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+          <thead>
+            <tr id="table-header">
+              <th>Time</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody class="monday">
+            <tr>
+              <td>10:00</td>
+              <td>Feed the cats</td>
+            </tr>
+            <tr>
+              <td>1:00</td>
+              <td>eat lunch</td>
+            </tr>
+          </tbody>
+          <tbody class="tuesday hidden"></tbody>
+          <tbody class="wednesday hidden"></tbody>
+          <tbody class="thursday hidden"></tbody>
+          <tbody class="friday hidden"></tbody>
+          <tbody class="saturday hidden"></tbody>
+          <tbody class="sunday hidden"></tbody>
+        </table>
       </div>
     </div>
     <script src="main.js"></script>

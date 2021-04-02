@@ -1,16 +1,8 @@
 var data = {
   editing: null,
   nextEntryId: 1,
-  days: [
-    monday: [],
-    tuesday: [],
-    wednesday: [],
-    thursday: [],
-    friday: [],
-    saturday: [],
-    sunday: []
-  ]
-}
+  days: []
+};
 
 var previousDataJSON = localStorage.getItem('week-planner');
 if (previousDataJSON !== null) {
@@ -24,12 +16,12 @@ function store(event) {
 
 window.addEventListener('beforeunload', store);
 
-
 var $addButton = document.querySelector('.add-button');
 var $submitButton = document.querySelector('.submit-button');
 var $modalContainer = document.querySelector('.modal-container');
 var $overlay = document.querySelector('.overlay');
 var $form = document.querySelector('form');
+var $
 
 function addHandler(event) {
   $modalContainer.className = 'modal-container';
@@ -56,7 +48,7 @@ var $eachDay = document.querySelectorAll('.days');
 function daysHandler(event) {
   for (var i = 0; i < $eachDay.length; i++) {
     if (event.target.getAttribute('id') === $eachDay[i].getAttribute('id')) {
-      console.log('working');
+
     }
   }
 }
