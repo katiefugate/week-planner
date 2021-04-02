@@ -1,7 +1,35 @@
+var data = {
+  editing: null,
+  nextEntryId: 1,
+  days: [
+    monday: [],
+    tuesday: [],
+    wednesday: [],
+    thursday: [],
+    friday: [],
+    saturday: [],
+    sunday: []
+  ]
+}
+
+var previousDataJSON = localStorage.getItem('week-planner');
+if (previousDataJSON !== null) {
+  data = JSON.parse(previousDataJSON);
+}
+
+function store(event) {
+  var dataJSON = JSON.stringify(data);
+  localStorage.setItem('week-planner', dataJSON);
+}
+
+window.addEventListener('beforeunload', store);
+
+
 var $addButton = document.querySelector('.add-button');
 var $submitButton = document.querySelector('.submit-button');
 var $modalContainer = document.querySelector('.modal-container');
 var $overlay = document.querySelector('.overlay');
+var $form = document.querySelector('form');
 
 function addHandler(event) {
   $modalContainer.className = 'modal-container';
@@ -14,6 +42,9 @@ function submitHandler(event) {
   event.preventdefault();
   $modalContainer.className = 'modal-container hidden';
   $overlay.className = 'overlay hidden';
+
+  var time = form.elements.time.value;
+  var description = form.elements.description.value;
 }
 
 $submitButton.addEventListener('submit', submitHandler);
