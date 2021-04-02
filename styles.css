@@ -1,7 +1,12 @@
 .modal-container {
   border: 1px solid black;
   background-color: white;
-  padding: 10px;
+  padding: 10px 2rem;
+  width: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 h1 {
@@ -15,15 +20,21 @@ form {
 
 .submit-button {
   align-self: flex-end;
+  border: 1px solid black;
+  background-color: white;
+  margin-top: 0.5rem;
 }
 
 #description {
   width: 99%;
   height: 5rem;
+  border: 2px solid black;
 }
 
 .drop-down {
-
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border: 2px solid black;
 }
 
 .row {
