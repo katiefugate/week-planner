@@ -62,6 +62,7 @@ form {
 .add-entry-button {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 .overlay {
@@ -76,4 +77,20 @@ form {
 .hidden {
   display: none;
 }
+
+.days {
+  background-color: white;
+  padding: 25px 10px;
+  flex-basis: calc(100% / 7);
+  margin: 0 35px;
+}
+
+.all-days {
+  display: flex;
+  width: 100%;
+}
+
+.days:hover {
+  background-color: rgb(221, 221, 221);
+  cursor: pointer;
 }
