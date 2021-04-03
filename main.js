@@ -1,7 +1,7 @@
 var data = {
   editing: null,
   nextEntryId: 1,
-  days: []
+  entries: []
 };
 
 var previousDataJSON = localStorage.getItem('week-planner');
@@ -21,7 +21,7 @@ var $submitButton = document.querySelector('.submit-button');
 var $modalContainer = document.querySelector('.modal-container');
 var $overlay = document.querySelector('.overlay');
 var $form = document.querySelector('form');
-var $
+var $viewDays = document.querySelectorAll('tbody');
 
 function addHandler(event) {
   $modalContainer.className = 'modal-container';
@@ -35,11 +35,18 @@ function submitHandler(event) {
   $modalContainer.className = 'modal-container hidden';
   $overlay.className = 'overlay hidden';
 
-  var time = form.elements.time.value;
-  var description = form.elements.description.value;
+  console.log('testing');
+  var entryId = data.nextEntryId;
+  var time = $form.elements.time.value;
+  var description = $form.elements.description.value;
+  var day = $form.elements.dayWeek.value;
+  var entryObj = { time, description, day, entryId };
+  data.entries.unshift(entryObj);
+  data.nextEntryId++;
+
 }
 
-$submitButton.addEventListener('submit', submitHandler);
+$form.addEventListener('submit', submitHandler);
 
 var $allDays = document.querySelector('.all-days');
 
@@ -48,8 +55,11 @@ var $eachDay = document.querySelectorAll('.days');
 function daysHandler(event) {
   for (var i = 0; i < $eachDay.length; i++) {
     if (event.target.getAttribute('id') === $eachDay[i].getAttribute('id')) {
-
+      $viewDays[i].className = 'day';
+    } else {
+      $viewDays[i].className = 'day hidden';
     }
+    console.log($viewDays[i].className);
   }
 }
 

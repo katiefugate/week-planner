@@ -24,9 +24,9 @@
       </div>
       <div class="modal-container hidden">
         <h1>Add Entry</h1>
-        <form>
+        <form id="form">
           <div class="row">
-            <select name="day-of-week" class="drop-down">
+            <select name="dayWeek" class="drop-down">
               <option value="default">Day of Week</option>
               <option value="Sunday">Sunday</option>
               <option value="Monday">Monday</option>
@@ -67,7 +67,7 @@
               <th>Description</th>
             </tr>
           </thead>
-          <tbody class="monday">
+          <tbody class="sunday hidden">
             <tr>
               <td>10:00</td>
               <td>Feed the cats</td>
@@ -77,12 +77,12 @@
               <td>eat lunch</td>
             </tr>
           </tbody>
-          <tbody class="tuesday hidden"></tbody>
-          <tbody class="wednesday hidden"></tbody>
-          <tbody class="thursday hidden"></tbody>
-          <tbody class="friday hidden"></tbody>
-          <tbody class="saturday hidden"></tbody>
-          <tbody class="sunday hidden"></tbody>
+          <tbody class="day" id="mon"></tbody>
+          <tbody class="day hidden" id="tues"></tbody>
+          <tbody class="day hidden" id="wed"></tbody>
+          <tbody class="day hidden" id="thurs"></tbody>
+          <tbody class="day hidden" id="fri"></tbody>
+          <tbody class="day hidden" id="sat"></tbody>
         </table>
       </div>
     </div>
