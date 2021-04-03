@@ -28,11 +28,11 @@
           <div class="row">
             <select name="dayWeek" class="drop-down">
               <option value="default">Day of Week</option>
-              <option value="Sunday">Sunday</option>
-              <option value="Monday">Monday</option>
-              <option value="Tuesday">Tuesday</option>
+              <option value="sunday">Sunday</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
               <option value="wednesday">Wednesday</option>
-              <option value="thurday">Thursday</option>
+              <option value="thursday">Thursday</option>
               <option value="friday">Friday</option>
               <option value="saturday">Saturday</option>
             </select>
@@ -67,7 +67,7 @@
               <th>Description</th>
             </tr>
           </thead>
-          <tbody class="sunday hidden">
+          <tbody class="day hidden" data-view="sunday">
             <tr>
               <td>10:00</td>
               <td>Feed the cats</td>
@@ -77,12 +77,12 @@
               <td>eat lunch</td>
             </tr>
           </tbody>
-          <tbody class="day" id="mon"></tbody>
-          <tbody class="day hidden" id="tues"></tbody>
-          <tbody class="day hidden" id="wed"></tbody>
-          <tbody class="day hidden" id="thurs"></tbody>
-          <tbody class="day hidden" id="fri"></tbody>
-          <tbody class="day hidden" id="sat"></tbody>
+          <tbody class="day" data-view="monday"></tbody>
+          <tbody class="day hidden" data-view="tuesday"></tbody>
+          <tbody class="day hidden" data-view="wednesday"></tbody>
+          <tbody class="day hidden" data-view="thursday"></tbody>
+          <tbody class="day hidden" data-view="friday"></tbody>
+          <tbody class="day hidden" data-view="saturday"></tbody>
         </table>
       </div>
     </div>

@@ -31,11 +31,9 @@ function addHandler(event) {
 $addButton.addEventListener('click', addHandler);
 
 function submitHandler(event) {
-  event.preventdefault();
+  event.preventDefault();
   $modalContainer.className = 'modal-container hidden';
   $overlay.className = 'overlay hidden';
-
-  console.log('testing');
   var entryId = data.nextEntryId;
   var time = $form.elements.time.value;
   var description = $form.elements.description.value;
@@ -43,7 +41,10 @@ function submitHandler(event) {
   var entryObj = { time, description, day, entryId };
   data.entries.unshift(entryObj);
   data.nextEntryId++;
-
+  for(var i = 0; i < $viewDays.length; i++) {
+  if (entryObj.day === $viewDays[i].dataset.view) {
+    $viewDays[i].appendChild(addEntry(entryObj));
+  }
 }
 
 $form.addEventListener('submit', submitHandler);
@@ -52,10 +53,24 @@ var $allDays = document.querySelector('.all-days');
 
 var $eachDay = document.querySelectorAll('.days');
 
+function addEntry(entry) {
+  var tRow = document.createElement('tr');
+  var time = document.createElement('td');
+  var description = document.createElement('td');
+  tRow.appendChild(time);
+  tRow.appendChild(description);
+  time.textContent = entry.time;
+  description.textContent = entry.description;
+
+}
+
 function daysHandler(event) {
   for (var i = 0; i < $eachDay.length; i++) {
     if (event.target.getAttribute('id') === $eachDay[i].getAttribute('id')) {
       $viewDays[i].className = 'day';
+      for(var i = 0; i <data.entries.length; i++) {
+
+      }
     } else {
       $viewDays[i].className = 'day hidden';
     }
