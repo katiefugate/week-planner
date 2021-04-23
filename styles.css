@@ -1,4 +1,5 @@
-.modal-container {
+.modal-container,
+.update-modal-container {
   border: 1px solid black;
   background-color: white;
   padding: 10px 2rem;
@@ -129,4 +130,19 @@ td {
 th {
   text-align: left;
   font-size: 14px;
+}
+
+.update-button {
+  float: right;
+  margin-right: 2rem;
+  background-color: rgb(54, 54, 209);
+  color: white;
+  padding: 0 1.25rem;
+  box-shadow: 2px 2px black;
+  border-radius: 0.15rem;
+}
+
+.update-button:hover {
+  background-color: lightskyblue;
+  color: black;
 }
