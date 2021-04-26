@@ -75,10 +75,15 @@ function addEntry(entry) {
   var tRow = document.createElement('tr');
   var time = document.createElement('td');
   var description = document.createElement('td');
+  var updateButton = document.createElement('button');
   tRow.appendChild(time);
   tRow.appendChild(description);
   time.textContent = entry.time;
   description.textContent = entry.description;
+  description.appendChild(updateButton);
+  updateButton.className = 'update-button';
+  updateButton.textContent = 'Update';
+  tRow.dataset.entry = entry.entryId;
   return tRow;
 }
 
@@ -103,8 +108,40 @@ function updateHandler(event) {
     $updateModal.className = 'update-modal-container';
     $overlay.className = 'overlay';
   }
+  data.editing = event.target.parentNode.parentNode.dataset.entry;
   $updateForm.elements.description.value = event.target.parentNode.firstChild.textContent;
-  console.log(event.target.parentNode)
+  $updateForm.elements.time.value = event.target.parentNode.parentNode.firstChild.textContent;
+  $updateForm.elements.dayWeek.value = event.target.parentNode.parentNode.parentNode.dataset.view;
 }
 
 $table.addEventListener('click', updateHandler);
+
+var $updateSubmit = document.querySelector('.submit-button.update');
+function updateSubmitHandler(event) {
+  event.preventDefault();
+  for(var i = 0; i < data.entries.length; i++) {
+    if (data.entries[i].entryId === Number(data.editing)) {
+      data.entries[i].description = $updateForm.elements.description.value;
+      data.entries[i].time = $updateForm.elements.time.value;
+      data.entries[i].day = $updateForm.elements.dayWeek.value;
+    }
+  }
+  var $eachRow = document.querySelectorAll('tr');
+  for(i = 0; i < $eachRow.length; i++) {
+    console.log($eachRow[i])
+    console.log(data.editing)
+    if(data.editing === $eachRow[i].dataset.entry) {
+      $eachRow[i].firstChild.textContent = $updateForm.elements.time.value;
+      $eachRow[i].firstChild.nextSibling.textContent = $updateForm.elements.description.value;
+      $eachRow[i].dataset.view = $updateForm.elements.dayWeek.value;
+      var updateButton = document.createElement('button');
+      $eachRow[i].firstChild.nextSibling.appendChild(updateButton);
+      updateButton.className = 'update-button';
+      updateButton.textContent = 'Update'
+    }
+  }
+  $updateModal.className = 'update-modal-container hidden';
+  $overlay.className = 'overlay hidden';
+}
+
+$updateSubmit.addEventListener('click', updateSubmitHandler);
